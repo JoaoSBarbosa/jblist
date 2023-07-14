@@ -1,6 +1,7 @@
 package com.joaosbarbosa.jblist.dto;
 
 import com.joaosbarbosa.jblist.entities.Game;
+import com.joaosbarbosa.jblist.projection.GameMinProjection;
 
 public class GameMinDTO {
 	private Long id;
@@ -21,6 +22,14 @@ public class GameMinDTO {
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
 	}
 
 
